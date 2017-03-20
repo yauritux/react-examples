@@ -1,0 +1,21 @@
+{
+  "name": "res01",
+  "authors": [
+    "Yauri Attamimi <yauritux@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^15.0.2"
+  }
+}

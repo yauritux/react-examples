@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <script src="/usr/local/react-15.0.1/build/react.min.js"></script>
+  <script src="/usr/local/react-15.0.1/build/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+  <div id="container"></div>
+  <script type="text/babel">
+    var FilteredList = React.createClass({
+      filterList: function (event) {
+        var updatedList = this.state.initialItems;
+        updatedList = updatedList.filter(function (item) {
+          return item.toLowerCase().search(
+            event.target.value.toLowerCase()) !== -1;
+        });
+        this.setState({items: updatedList});
+      },
+      getInitialState: function () {
+        return {
+          initialItems: [
+            "Apples",
+            "Broccoli",
+            "Chicken",
+            "Duck",
+            "Eggs",
+            "Fish",
+            "Granola",
+            "Hash Browns"
+          ],
+          items: []
+        };
+      },
+      componentWillMount: function () {
+        this.setState({items: this.state.initialItems});
+      },
+      render: function () {
+        return (
+          <div className="filter-list">
+            <input type="text" placeholder="Search" onChange={this.filterList}/>
+            <List items={this.state.items}/>
+          </div>
+        );
+      }
+    });
+
+    var List = React.createClass({
+      render: function () {
+        return (
+          <ul>
+          {
+            this.props.items.map(function (item) {
+              return <li key={item}>{item}</li>
+            })
+          }
+          </ul>
+        );
+      }
+    });
+
+    ReactDOM.render(<FilteredList/>, document.getElementById('container'));
+  </script>
+</body>
+</html>

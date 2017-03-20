@@ -1,0 +1,17 @@
+{
+  "name": "react-router-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yauri Attamimi <yauritux@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-router": "^2.4.1"
+  }
+}
